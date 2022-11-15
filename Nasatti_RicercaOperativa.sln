@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nasatti_RicercaOperativa", "Nasatti_RicercaOperativa\Nasatti_RicercaOperativa.csproj", "{2A7CEE3D-560D-4FE3-B2CB-A2AC71D8863A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A7CEE3D-560D-4FE3-B2CB-A2AC71D8863A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7CEE3D-560D-4FE3-B2CB-A2AC71D8863A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7CEE3D-560D-4FE3-B2CB-A2AC71D8863A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7CEE3D-560D-4FE3-B2CB-A2AC71D8863A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03EA8A12-A56F-4E6A-9AAF-3668D5484FED}
+	EndGlobalSection
+EndGlobal
