@@ -28,40 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabella = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.tabella)).BeginInit();
+            this.tab = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.tab)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabella
+            // tab
             // 
-            this.tabella.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabella.BackgroundColor = System.Drawing.Color.White;
-            this.tabella.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabella.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tabella.Location = new System.Drawing.Point(12, 25);
-            this.tabella.Name = "tabella";
-            this.tabella.RowHeadersWidth = 51;
-            this.tabella.Size = new System.Drawing.Size(765, 265);
-            this.tabella.TabIndex = 1;
-            this.tabella.Visible = false;
+            this.tab.BackgroundColor = System.Drawing.Color.White;
+            this.tab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tab.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tab.Location = new System.Drawing.Point(12, 25);
+            this.tab.Name = "tab";
+            this.tab.RowHeadersWidth = 51;
+            this.tab.Size = new System.Drawing.Size(765, 265);
+            this.tab.TabIndex = 1;
             // 
             // Temp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 329);
-            this.Controls.Add(this.tabella);
+            this.Controls.Add(this.tab);
             this.Name = "Temp";
             this.Text = "Temp";
-            ((System.ComponentModel.ISupportInitialize)(this.tabella)).EndInit();
+            this.Load += new System.EventHandler(this.Temp_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tab)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.DataGridView tabella;
+        public System.Windows.Forms.DataGridView tab;
     }
 }

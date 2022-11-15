@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Nasatti_Ricerca_operativa
+namespace Nasatti_RicercaOperativa
 {
     public partial class Costo : Form
     {

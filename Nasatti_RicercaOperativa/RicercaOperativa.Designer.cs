@@ -1,6 +1,6 @@
-﻿namespace Nasatti_Ricerca_operativa
+﻿namespace Nasatti_RicercaOperativa
 {
-    partial class RicercaBinaria
+    partial class RicercaOperativa
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -208,7 +208,7 @@
             this.random_btn.Visible = false;
             this.random_btn.Click += new System.EventHandler(this.random_btn_Click);
             // 
-            // RicercaBinaria
+            // RicercaOperativa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -224,8 +224,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabella);
             this.MinimumSize = new System.Drawing.Size(821, 505);
-            this.Name = "RicercaBinaria";
-            this.Text = "Ricerca Binaria";
+            this.Name = "RicercaOperativa";
+            this.Text = "Ricerca Operativa";
             ((System.ComponentModel.ISupportInitialize)(this.tabella)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produttori)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.destinatari)).EndInit();

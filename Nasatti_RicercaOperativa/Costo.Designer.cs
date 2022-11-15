@@ -1,4 +1,4 @@
-﻿namespace Nasatti_Ricerca_operativa
+﻿namespace Nasatti_RicercaOperativa
 {
     partial class Costo
     {

@@ -8,17 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Nasatti_Ricerca_operativa
+namespace Nasatti_RicercaOperativa
 {
-    public partial class RicercaBinaria : Form
+    public partial class RicercaOperativa : Form
     {
         //non poter scrivere negli indici delle tabelle
         //inserisci sia manualmente che casuale(non necessario)
         //controllare se entrambi i totali coincidono
         //risultati su altra form
 
-
-        public RicercaBinaria()
+        Queue<int>temp = new Queue<int>();
+        public RicercaOperativa()
         {
 
             InitializeComponent();
@@ -100,13 +100,13 @@ namespace Nasatti_Ricerca_operativa
             {
                 if (controllo_tot())
                 {
+                    
+                    save();
+                    Temp ttemp = new Temp(temp, tabella.RowCount, tabella.ColumnCount);
+                    ttemp.Show();
                     random_btn.Enabled = false;
                     Costo c = new Costo();
-                    c.Show();
-                    MessageBox.Show((tabella.ColumnCount-1).ToString());//4
-                    MessageBox.Show((tabella.RowCount-1).ToString());//4
-                    
-                    MessageBox.Show(tabella[tabella.ColumnCount - 1, tabella.RowCount - 1].Value.ToString());
+                    //c.Show();
                     int tot = int.Parse(tabella[tabella.ColumnCount - 1, tabella.RowCount - 1].Value.ToString());
                     int col;
                     int row;
@@ -218,10 +218,6 @@ namespace Nasatti_Ricerca_operativa
                     random_btn.Enabled = false;
                     Costo c = new Costo();
                     c.Show();
-                    MessageBox.Show(tabella.ColumnCount.ToString());
-                    MessageBox.Show(tabella.RowCount.ToString());
-                    MessageBox.Show(tabella[3, 2].Value.ToString());
-                    MessageBox.Show(tabella[tabella.ColumnCount - 1, tabella.RowCount - 1].Value.ToString());
                     int tot = int.Parse(tabella[tabella.ColumnCount - 1, tabella.RowCount - 1].Value.ToString());
 
                     int t = 0;
@@ -341,30 +337,13 @@ namespace Nasatti_Ricerca_operativa
             int value = tot;
             tabella[tabella.ColumnCount - 1, tabella.RowCount - 2].Value = value;
         }
-        private void clona()
+        private void save()
         {
-            
-
-            //tabella.Columns.Clear();
-            tabella.RowHeadersVisible = false;
-            tabella.Columns.Add("", "");
-            for (int i = 1; i < int.Parse(destinatari.Text) + 1; i++)
-            {
-                tabella.Columns.Add("D" + i, "D" + i);
-            }
-            tabella.Columns.Add("tot colonne", "tot colonne");
-            for (int i = 1; i < int.Parse(produttori.Text) + 1; i++)
-            {
-                tabella.Rows.Add("U" + i, "");
-            }
-            tabella.Rows.Add("tot righe", "");
-            tabella.Columns[0].ReadOnly = true;
-
-            for (int i = 0; i < tabella.ColumnCount - 1; i++)
+            for (int i = 1; i < tabella.ColumnCount - 2; i++)
             {
                 for (int j = 0; j < tabella.RowCount - 1; j++)
                 {
-                    //t.tabella[i, j].Value = tabella[i, j].Value;
+                    temp.Enqueue(int.Parse(tabella[i, j].Value.ToString()));
                 }
             }
         }

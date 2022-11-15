@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Nasatti_Ricerca_operativa
+namespace Nasatti_RicercaOperativa
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace Nasatti_Ricerca_operativa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RicercaBinaria());
+            Application.Run(new RicercaOperativa());
         }
     }
 }
