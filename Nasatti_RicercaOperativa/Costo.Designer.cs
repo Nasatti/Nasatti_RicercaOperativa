@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.totale = new System.Windows.Forms.Label();
             this.calcolo = new System.Windows.Forms.RichTextBox();
             this.tab = new System.Windows.Forms.DataGridView();
+            this.risolvi_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +88,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(196, 85);
+            this.label2.Location = new System.Drawing.Point(137, 88);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
@@ -96,7 +98,7 @@
             // totale
             // 
             this.totale.AutoSize = true;
-            this.totale.Location = new System.Drawing.Point(233, 85);
+            this.totale.Location = new System.Drawing.Point(174, 88);
             this.totale.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.totale.Name = "totale";
             this.totale.Size = new System.Drawing.Size(0, 13);
@@ -115,17 +117,46 @@
             // 
             // tab
             // 
+            this.tab.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tab.BackgroundColor = System.Drawing.Color.White;
+            this.tab.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tab.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tab.Location = new System.Drawing.Point(267, 88);
+            this.tab.Location = new System.Drawing.Point(300, 88);
             this.tab.Name = "tab";
-            this.tab.Size = new System.Drawing.Size(578, 401);
+            this.tab.Size = new System.Drawing.Size(545, 401);
             this.tab.TabIndex = 9;
+            // 
+            // risolvi_btn
+            // 
+            this.risolvi_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.risolvi_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.risolvi_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.risolvi_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.risolvi_btn.ForeColor = System.Drawing.Color.White;
+            this.risolvi_btn.Location = new System.Drawing.Point(197, 224);
+            this.risolvi_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.risolvi_btn.Name = "risolvi_btn";
+            this.risolvi_btn.Size = new System.Drawing.Size(81, 52);
+            this.risolvi_btn.TabIndex = 10;
+            this.risolvi_btn.Text = "RISOLVI";
+            this.risolvi_btn.UseVisualStyleBackColor = false;
+            this.risolvi_btn.Click += new System.EventHandler(this.risolvi_btn_Click);
             // 
             // Costo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 501);
+            this.Controls.Add(this.risolvi_btn);
             this.Controls.Add(this.tab);
             this.Controls.Add(this.calcolo);
             this.Controls.Add(this.totale);
@@ -134,8 +165,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(873, 540);
             this.Name = "Costo";
             this.Text = "Costo";
+            this.Load += new System.EventHandler(this.Costo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab)).EndInit();
@@ -154,5 +187,6 @@
         private System.Windows.Forms.Label totale;
         private System.Windows.Forms.RichTextBox calcolo;
         private System.Windows.Forms.DataGridView tab;
+        private System.Windows.Forms.Button risolvi_btn;
     }
 }

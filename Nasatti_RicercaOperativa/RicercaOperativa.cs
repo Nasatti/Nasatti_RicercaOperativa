@@ -33,12 +33,14 @@ namespace Nasatti_RicercaOperativa
         private void button1_Click(object sender, EventArgs e)
         {
             generaTabella();
-            tabella.Visible = true;
-            NordOvest_btn.Visible = true;
-            minCosti_btn.Visible = true;
-            random_btn.Visible = true;
-            random_btn.Enabled = true;
-
+            if (!controllo_celle())
+            {
+                tabella.Visible = true;
+                NordOvest_btn.Visible = true;
+                minCosti_btn.Visible = true;
+                random_btn.Visible = true;
+                random_btn.Enabled = true;
+            }
             /*tabella[1, 0].Value = 10;
             tabella[1, 1].Value = 15;
             tabella[1, 2].Value = 20;
@@ -71,25 +73,26 @@ namespace Nasatti_RicercaOperativa
         }
         private void generaTabella()
         {
-            tabella.Columns.Clear();
-            tabella.RowHeadersVisible = false;
-            tabella.Columns.Add("", "");
-            for (int i = 1; i < int.Parse(destinatari.Text) + 1; i++)
-            {
-                tabella.Columns.Add("D" + i, "D" + i);
-            }
-            tabella.Columns.Add("tot colonne", "tot colonne");
-            for (int i = 1; i < int.Parse(produttori.Text) + 1; i++)
-            {
-                tabella.Rows.Add("U" + i, "");
-            }
-            tabella.Rows.Add("tot righe", "");
-            tabella.Columns[0].ReadOnly = true;
+                tabella.Columns.Clear();
+                tabella.RowHeadersVisible = false;
+                tabella.Columns.Add("", "");
+                for (int i = 1; i < int.Parse(destinatari.Text) + 1; i++)
+                {
+                    tabella.Columns.Add("D" + i, "D" + i);
+                }
+                tabella.Columns.Add("tot colonne", "tot colonne");
+                for (int i = 1; i < int.Parse(produttori.Text) + 1; i++)
+                {
+                    tabella.Rows.Add("U" + i, "");
+                }
+                tabella.Rows.Add("tot righe", "");
+                tabella.Columns[0].ReadOnly = true;
 
-            foreach (DataGridViewColumn t in tabella.Columns)
-            {
-                t.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            }
+                foreach (DataGridViewColumn t in tabella.Columns)
+                {
+                    t.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+                }
+            
         }
 
         private void NordOvest_btn_Click(object sender, EventArgs e)
@@ -100,44 +103,10 @@ namespace Nasatti_RicercaOperativa
             {
                 if (controllo_tot())
                 {
-                    
                     save();
                     random_btn.Enabled = false;
-                    MessageBox.Show("r.- "+tabella.RowCount.ToString());
-                    Costo c = new Costo(temp, tabella.RowCount, tabella.ColumnCount);
+                    Costo c = new Costo(temp, tabella.RowCount, tabella.ColumnCount, 1);
                     c.Show();
-                    /*int tot = int.Parse(tabella[tabella.ColumnCount - 1, tabella.RowCount - 1].Value.ToString());
-                    int col;
-                    int row;
-                    int n;
-                    while (tabella.Rows.Count > 1 && tabella.RowCount > 1)
-                    {
-                        col = int.Parse(tabella[tabella.ColumnCount - 1, 0].Value.ToString());
-                        row = int.Parse(tabella[1, tabella.RowCount - 1].Value.ToString());
-                        n = int.Parse(tabella[1, 0].Value.ToString());
-                        if (col > row)
-                        {
-                            col -= row;
-                            tot -= row;
-                            tabella[tabella.ColumnCount - 1, 0].Value = col;
-                            tabella[tabella.ColumnCount - 1, tabella.RowCount - 1].Value = tot;
-                            t = c.aggiornamento(n, row, t, true, "NordOvest");
-                            tabella.Columns.Remove(tabella.Columns[1]);
-
-                        }
-                        else
-                        {
-                            row -= col;
-                            tot -= col;
-                            tabella[1, tabella.RowCount - 1].Value = row;
-                            tabella[tabella.ColumnCount - 1, tabella.RowCount - 1].Value = tot;
-                            t = c.aggiornamento(n, col, t, true, "NordOvest");
-                            tabella.Rows.Remove(tabella.Rows[0]);
-                        }
-                        var pause = Task.Delay(1000);
-                        pause.Wait();
-                    }
-                    c.aggiornamento(1, 1, t, false, "NordOvest");*/
                 }
                 else
                     MessageBox.Show("Le somme non coincidono");
@@ -202,104 +171,21 @@ namespace Nasatti_RicercaOperativa
 
         private void minCosti_btn_Click(object sender, EventArgs e)
         {
-            //try
-            //{
             if (controllo_celle())
             {
                 if (controllo_tot())
-                {
-                    //clona();
-                    int col = 0;
-                    int row = 0;
-                    int n_c = 1;
-                    int n_r = 1;
+                { 
                     save();
                     random_btn.Enabled = false;
-                    Costo c = new Costo(temp, tabella.RowCount, tabella.ColumnCount);
+                    Costo c = new Costo(temp, tabella.RowCount, tabella.ColumnCount, 2);
                     c.Show();
-                    int tot = int.Parse(tabella[tabella.ColumnCount - 1, tabella.RowCount - 1].Value.ToString());
-
-                    int t = 0;
-                    while (tabella.Rows.Count > 1 && tabella.RowCount > 1)
-                    {
-                        int min = 100000;
-
-                        for (int i = 1; i < tabella.ColumnCount - 1; i++)
-                        {
-                            for (int j = 0; j < tabella.RowCount - 1; j++)
-                            {
-                                //MessageBox.Show(tabella[i, j].Value.ToString());
-                                if (int.Parse(tabella[i, j].Value.ToString()) < min)
-                                {
-                                    n_c = i;
-                                    n_r = j;
-                                    min = int.Parse(tabella[i, j].Value.ToString());
-                                    row = int.Parse(tabella[i, tabella.RowCount - 1].Value.ToString());
-                                    col = int.Parse(tabella[tabella.ColumnCount - 1, j].Value.ToString());
-                                }
-                                else if (int.Parse(tabella[i, j].Value.ToString()) == min)
-                                {
-
-                                    if (int.Parse(tabella[i, tabella.RowCount - 1].Value.ToString()) > row)
-                                    {
-                                        n_c = i;
-                                        n_r = j;
-                                        min = int.Parse(tabella[i, j].Value.ToString());
-                                        row = int.Parse(tabella[i, tabella.RowCount - 1].Value.ToString());
-                                        col = int.Parse(tabella[tabella.ColumnCount - 1, j].Value.ToString());
-                                    }
-
-
-                                }
-                            }
-                        }
-
-                        if (col > row)
-                        {
-
-
-                            col -= row;
-                            tot -= row;
-                            tabella[tabella.ColumnCount - 1, n_r].Value = col;
-                            tabella[tabella.ColumnCount - 1, tabella.RowCount - 1].Value = tot;
-
-
-                            //MessageBox.Show("aaa" + tabella[n_c, 0].Value.ToString());
-                            t = c.aggiornamento(min, row, t, true, "MinCosti");
-
-                            tabella.Columns.Remove(tabella.Columns[n_c]);
-
-                        }
-                        else
-                        {
-
-
-                            row -= col;
-                            tot -= col;
-                            tabella[n_c, tabella.RowCount - 1].Value = row;
-                            tabella[tabella.ColumnCount - 1, tabella.RowCount - 1].Value = tot;
-
-                            //MessageBox.Show("aaa" + tabella[0, n_c].Value.ToString());
-                            t = c.aggiornamento(min, col, t, true, "MinCosti");
-
-                            tabella.Rows.Remove(tabella.Rows[n_r]);
-                        }
-                        var pause = Task.Delay(1000);
-                        pause.Wait();
-                        //MessageBox.Show("");
-                    }
-                    c.aggiornamento(1, 1, t, false, "MinCosti");
+                    
                 }
                 else
                     MessageBox.Show("Le somme non coincidono");
             }
             else
                 MessageBox.Show("mancano dei numeri");
-            /*}
-            catch (Exception ex)
-            {
-                MessageBox.Show("Inserisci i dati nella tabella");
-            }*/
         }
 
         private void random_btn_Click(object sender, EventArgs e)
@@ -345,6 +231,7 @@ namespace Nasatti_RicercaOperativa
                     temp.Enqueue(int.Parse(tabella[i, j].Value.ToString()));
                 }
             }
+            MessageBox.Show(temp.Count.ToString());
         }
     }
 }
