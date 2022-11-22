@@ -35,7 +35,7 @@ namespace Nasatti_RicercaOperativa
         {
             if (crea)
             {
-                DialogResult d = MessageBox.Show("cancellare i dati per creare una nuova tabella?", "avvertimento", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult d = MessageBox.Show("cancellare i dati per creare una nuova tabella?", "Attenzione!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if(d == DialogResult.Yes)
                 {
                     generaTabella();
