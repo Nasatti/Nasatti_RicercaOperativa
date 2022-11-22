@@ -18,6 +18,7 @@ namespace Nasatti_RicercaOperativa
         //risultati su altra form
 
         Queue<int>temp = new Queue<int>();
+        bool crea = false;
         public RicercaOperativa()
         {
 
@@ -32,9 +33,19 @@ namespace Nasatti_RicercaOperativa
 
         private void button1_Click(object sender, EventArgs e)
         {
-            generaTabella();
-            if (!controllo_celle())
+            if (crea)
             {
+                DialogResult d = MessageBox.Show("cancellare i dati per creare una nuova tabella?", "avvertimento", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(d == DialogResult.Yes)
+                {
+                    generaTabella();
+                    random_btn.Enabled = true;
+                    crea = false;
+                }
+            }
+            else
+            {
+                generaTabella();
                 tabella.Visible = true;
                 NordOvest_btn.Visible = true;
                 minCosti_btn.Visible = true;
@@ -179,7 +190,6 @@ namespace Nasatti_RicercaOperativa
                     random_btn.Enabled = false;
                     Costo c = new Costo(temp, tabella.RowCount, tabella.ColumnCount, 2);
                     c.Show();
-                    
                 }
                 else
                     MessageBox.Show("Le somme non coincidono");
@@ -187,10 +197,10 @@ namespace Nasatti_RicercaOperativa
             else
                 MessageBox.Show("mancano dei numeri");
         }
-
         private void random_btn_Click(object sender, EventArgs e)
         {
             Random r = new Random();
+            crea = true;
             //tabella
             for (int i = 1; i < tabella.ColumnCount - 1; i++)
             {
@@ -231,7 +241,6 @@ namespace Nasatti_RicercaOperativa
                     temp.Enqueue(int.Parse(tabella[i, j].Value.ToString()));
                 }
             }
-            MessageBox.Show(temp.Count.ToString());
         }
     }
 }

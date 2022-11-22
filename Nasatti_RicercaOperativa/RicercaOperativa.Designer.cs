@@ -63,10 +63,11 @@
             this.tabella.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tabella.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabella.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tabella.Location = new System.Drawing.Point(32, 169);
+            this.tabella.Location = new System.Drawing.Point(43, 208);
+            this.tabella.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabella.Name = "tabella";
             this.tabella.RowHeadersWidth = 51;
-            this.tabella.Size = new System.Drawing.Size(760, 279);
+            this.tabella.Size = new System.Drawing.Size(1013, 343);
             this.tabella.TabIndex = 0;
             this.tabella.Visible = false;
             this.tabella.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.tabella_EditingControlShowing);
@@ -74,35 +75,34 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(97, 92);
+            this.label1.Location = new System.Drawing.Point(129, 113);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(63, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "produttori";
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(97, 131);
+            this.label2.Location = new System.Drawing.Point(129, 161);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(69, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "destinatari";
             // 
             // button1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(301, 92);
+            this.button1.Location = new System.Drawing.Point(401, 113);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 52);
+            this.button1.Size = new System.Drawing.Size(89, 64);
             this.button1.TabIndex = 5;
             this.button1.Text = "Crea";
             this.button1.UseVisualStyleBackColor = false;
@@ -110,15 +110,15 @@
             // 
             // produttori
             // 
-            this.produttori.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.produttori.Location = new System.Drawing.Point(165, 92);
+            this.produttori.Location = new System.Drawing.Point(220, 113);
+            this.produttori.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.produttori.Minimum = new decimal(new int[] {
             2,
             0,
             0,
             0});
             this.produttori.Name = "produttori";
-            this.produttori.Size = new System.Drawing.Size(120, 20);
+            this.produttori.Size = new System.Drawing.Size(160, 22);
             this.produttori.TabIndex = 6;
             this.produttori.Value = new decimal(new int[] {
             2,
@@ -128,15 +128,15 @@
             // 
             // destinatari
             // 
-            this.destinatari.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.destinatari.Location = new System.Drawing.Point(165, 129);
+            this.destinatari.Location = new System.Drawing.Point(220, 159);
+            this.destinatari.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.destinatari.Minimum = new decimal(new int[] {
             2,
             0,
             0,
             0});
             this.destinatari.Name = "destinatari";
-            this.destinatari.Size = new System.Drawing.Size(120, 20);
+            this.destinatari.Size = new System.Drawing.Size(160, 22);
             this.destinatari.TabIndex = 7;
             this.destinatari.Value = new decimal(new int[] {
             2,
@@ -146,15 +146,15 @@
             // 
             // NordOvest_btn
             // 
-            this.NordOvest_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.NordOvest_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NordOvest_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.NordOvest_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NordOvest_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NordOvest_btn.ForeColor = System.Drawing.Color.White;
-            this.NordOvest_btn.Location = new System.Drawing.Point(559, 92);
+            this.NordOvest_btn.Location = new System.Drawing.Point(830, 113);
             this.NordOvest_btn.Margin = new System.Windows.Forms.Padding(0);
             this.NordOvest_btn.Name = "NordOvest_btn";
-            this.NordOvest_btn.Size = new System.Drawing.Size(81, 52);
+            this.NordOvest_btn.Size = new System.Drawing.Size(108, 64);
             this.NordOvest_btn.TabIndex = 8;
             this.NordOvest_btn.Text = "Nord-Ovest";
             this.NordOvest_btn.UseVisualStyleBackColor = false;
@@ -163,15 +163,15 @@
             // 
             // minCosti_btn
             // 
-            this.minCosti_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.minCosti_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minCosti_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.minCosti_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minCosti_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minCosti_btn.ForeColor = System.Drawing.Color.White;
-            this.minCosti_btn.Location = new System.Drawing.Point(647, 92);
+            this.minCosti_btn.Location = new System.Drawing.Point(948, 113);
             this.minCosti_btn.Margin = new System.Windows.Forms.Padding(0);
             this.minCosti_btn.Name = "minCosti_btn";
-            this.minCosti_btn.Size = new System.Drawing.Size(81, 52);
+            this.minCosti_btn.Size = new System.Drawing.Size(108, 64);
             this.minCosti_btn.TabIndex = 9;
             this.minCosti_btn.Text = "Mini costi";
             this.minCosti_btn.UseVisualStyleBackColor = false;
@@ -184,9 +184,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(-7, -5);
+            this.panel1.Location = new System.Drawing.Point(-9, -6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(839, 72);
+            this.panel1.Size = new System.Drawing.Size(1119, 89);
             this.panel1.TabIndex = 10;
             // 
             // label3
@@ -195,23 +196,24 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(328, 23);
+            this.label3.Location = new System.Drawing.Point(437, 28);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 24);
+            this.label3.Size = new System.Drawing.Size(243, 30);
             this.label3.TabIndex = 0;
             this.label3.Text = "RICERCA OPERATIVA";
             // 
             // random_btn
             // 
-            this.random_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.random_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.random_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.random_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.random_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.random_btn.ForeColor = System.Drawing.Color.White;
-            this.random_btn.Location = new System.Drawing.Point(470, 92);
+            this.random_btn.Location = new System.Drawing.Point(712, 113);
             this.random_btn.Margin = new System.Windows.Forms.Padding(0);
             this.random_btn.Name = "random_btn";
-            this.random_btn.Size = new System.Drawing.Size(81, 52);
+            this.random_btn.Size = new System.Drawing.Size(108, 64);
             this.random_btn.TabIndex = 11;
             this.random_btn.Text = "Carica";
             this.random_btn.UseVisualStyleBackColor = false;
@@ -220,9 +222,9 @@
             // 
             // RicercaOperativa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 477);
+            this.ClientSize = new System.Drawing.Size(1100, 587);
             this.Controls.Add(this.random_btn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.minCosti_btn);
@@ -233,7 +235,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabella);
-            this.MinimumSize = new System.Drawing.Size(821, 505);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(938, 515);
             this.Name = "RicercaOperativa";
             this.Text = "Ricerca Operativa";
             ((System.ComponentModel.ISupportInitialize)(this.tabella)).EndInit();
