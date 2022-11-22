@@ -20,6 +20,7 @@ namespace Nasatti_RicercaOperativa
         Thread t;
         public Costo(Queue<int> ll, int row, int col, int s)
         {
+            CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
             this.l = ll;
             this.row = row;
@@ -110,11 +111,9 @@ namespace Nasatti_RicercaOperativa
                     t = aggiornamento(n, col, t, true);
                     tab.Rows.Remove(tab.Rows[0]);
                 }
-                var pause = Task.Delay(1000);
-                pause.Wait();
+                Thread.Sleep(1000);
             }
         aggiornamento(1, 1, t, false);
-        
         }
         public void MinCosti()
         {
@@ -123,12 +122,10 @@ namespace Nasatti_RicercaOperativa
             int n_c = 1;
             int n_r = 1;
             int tot = int.Parse(tab[tab.ColumnCount - 1, tab.RowCount - 1].Value.ToString());
-
             int t = 0;
             while (tab.Rows.Count > 1 && tab.RowCount > 1)
             {
                 int min = 100000;
-
                 for (int i = 1; i < tab.ColumnCount - 1; i++)
                 {
                     for (int j = 0; j < tab.RowCount - 1; j++)
@@ -144,7 +141,6 @@ namespace Nasatti_RicercaOperativa
                         }
                         else if (int.Parse(tab[i, j].Value.ToString()) == min)
                         {
-
                             if (int.Parse(tab[i, tab.RowCount - 1].Value.ToString()) > row)
                             {
                                 n_c = i;
@@ -153,49 +149,33 @@ namespace Nasatti_RicercaOperativa
                                 row = int.Parse(tab[i, tab.RowCount - 1].Value.ToString());
                                 col = int.Parse(tab[tab.ColumnCount - 1, j].Value.ToString());
                             }
-
-
                         }
                     }
                 }
-
                 if (col > row)
                 {
-
-
                     col -= row;
                     tot -= row;
                     tab[tab.ColumnCount - 1, n_r].Value = col;
                     tab[tab.ColumnCount - 1, tab.RowCount - 1].Value = tot;
-
-
-                    //MessageBox.Show("aaa" + tabella[n_c, 0].Value.ToString());
                     t = aggiornamento(min, row, t, true);
-
                     tab.Columns.Remove(tab.Columns[n_c]);
-
                 }
                 else
                 {
-
-
                     row -= col;
                     tot -= col;
                     tab[n_c, tab.RowCount - 1].Value = row;
                     tab[tab.ColumnCount - 1, tab.RowCount - 1].Value = tot;
 
-                    //MessageBox.Show("aaa" + tabella[0, n_c].Value.ToString());
                     t = aggiornamento(min, col, t, true);
 
                     tab.Rows.Remove(tab.Rows[n_r]);
                 }
-                var pause = Task.Delay(1000);
-                pause.Wait();
-                //MessageBox.Show("");
+                Thread.Sleep(1000);
             }
             aggiornamento(1, 1, t, false);
         }
-
         private void Costo_Load(object sender, EventArgs e)
         {
             restore();
@@ -212,14 +192,19 @@ namespace Nasatti_RicercaOperativa
 
         private void risolvi_btn_Click(object sender, EventArgs e)
         {
+            Thread t;
             risolvi_btn.Enabled = false;
             switch (scelta)
             {
                 case 1:
-                    NordOvest();
+                    t = new Thread(new ThreadStart(NordOvest));
+                    t.Start();
+                        //NordOvest();
                     break;
                 case 2:
-                    MinCosti();
+                    t = new Thread(new ThreadStart(MinCosti));
+                    t.Start();
+                    //MinCosti();
                     break;
             }
             
