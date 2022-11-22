@@ -102,12 +102,11 @@ namespace Nasatti_RicercaOperativa
                 {
                     
                     save();
-                    Temp ttemp = new Temp(temp, tabella.RowCount, tabella.ColumnCount);
-                    ttemp.Show();
                     random_btn.Enabled = false;
-                    Costo c = new Costo();
-                    //c.Show();
-                    int tot = int.Parse(tabella[tabella.ColumnCount - 1, tabella.RowCount - 1].Value.ToString());
+                    MessageBox.Show("r.- "+tabella.RowCount.ToString());
+                    Costo c = new Costo(temp, tabella.RowCount, tabella.ColumnCount);
+                    c.Show();
+                    /*int tot = int.Parse(tabella[tabella.ColumnCount - 1, tabella.RowCount - 1].Value.ToString());
                     int col;
                     int row;
                     int n;
@@ -137,9 +136,8 @@ namespace Nasatti_RicercaOperativa
                         }
                         var pause = Task.Delay(1000);
                         pause.Wait();
-                        //MessageBox.Show("");
                     }
-                    c.aggiornamento(1, 1, t, false, "NordOvest");
+                    c.aggiornamento(1, 1, t, false, "NordOvest");*/
                 }
                 else
                     MessageBox.Show("Le somme non coincidono");
@@ -215,8 +213,9 @@ namespace Nasatti_RicercaOperativa
                     int row = 0;
                     int n_c = 1;
                     int n_r = 1;
+                    save();
                     random_btn.Enabled = false;
-                    Costo c = new Costo();
+                    Costo c = new Costo(temp, tabella.RowCount, tabella.ColumnCount);
                     c.Show();
                     int tot = int.Parse(tabella[tabella.ColumnCount - 1, tabella.RowCount - 1].Value.ToString());
 
@@ -339,9 +338,9 @@ namespace Nasatti_RicercaOperativa
         }
         private void save()
         {
-            for (int i = 1; i < tabella.ColumnCount - 2; i++)
+            for (int i = 1; i < tabella.ColumnCount; i++)
             {
-                for (int j = 0; j < tabella.RowCount - 1; j++)
+                for (int j = 0; j < tabella.RowCount; j++)
                 {
                     temp.Enqueue(int.Parse(tabella[i, j].Value.ToString()));
                 }
