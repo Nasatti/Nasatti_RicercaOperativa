@@ -48,7 +48,6 @@ namespace Nasatti_RicercaOperativa
             }
             return tot;
         }
-
         public void restore()
         {
             tab.Columns.Clear();
@@ -64,7 +63,6 @@ namespace Nasatti_RicercaOperativa
             {
                 tab.Rows.Add("U" + j, "");
             }
-            
             tab.Rows.Add("Totale", "");
             tab.Columns[0].ReadOnly = true;
             foreach (DataGridViewColumn t in tab.Columns)
@@ -79,14 +77,13 @@ namespace Nasatti_RicercaOperativa
                 }
             }
         }
-
         public void NordOvest()
         {
             int t = 0;
             int tot = int.Parse(tab[tab.ColumnCount - 1, tab.RowCount - 1].Value.ToString());
-                    int col;
-                    int row;
-                    int n;
+            int col;
+            int row;
+            int n;
             while (tab.Rows.Count > 1 && tab.RowCount > 1)
             {
                 col = int.Parse(tab[tab.ColumnCount - 1, 0].Value.ToString());
@@ -113,7 +110,7 @@ namespace Nasatti_RicercaOperativa
                 }
                 Thread.Sleep(1000);
             }
-        aggiornamento(1, 1, t, false);
+            aggiornamento(1, 1, t, false);
         }
         public void MinCosti()
         {
@@ -130,7 +127,6 @@ namespace Nasatti_RicercaOperativa
                 {
                     for (int j = 0; j < tab.RowCount - 1; j++)
                     {
-                        //MessageBox.Show(tabella[i, j].Value.ToString());
                         if (int.Parse(tab[i, j].Value.ToString()) < min)
                         {
                             n_c = i;
@@ -199,12 +195,10 @@ namespace Nasatti_RicercaOperativa
                 case 1:
                     t = new Thread(new ThreadStart(NordOvest));
                     t.Start();
-                        //NordOvest();
                     break;
                 case 2:
                     t = new Thread(new ThreadStart(MinCosti));
                     t.Start();
-                    //MinCosti();
                     break;
             }
             
