@@ -21,6 +21,7 @@ namespace Nasatti_RicercaOperativa
             tabella.AllowUserToDeleteRows = false;
             tabella.AllowUserToResizeColumns = false;
             tabella.AllowUserToResizeRows = false;
+            tabella.ReadOnly = true;
             this.DoubleBuffered = true;
         }
         private void button1_Click(object sender, EventArgs e)
