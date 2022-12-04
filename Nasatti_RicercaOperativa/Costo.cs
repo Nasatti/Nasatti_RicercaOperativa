@@ -30,6 +30,7 @@ namespace Nasatti_RicercaOperativa
             tab.AllowUserToDeleteRows = false;
             tab.AllowUserToResizeColumns = false;
             tab.AllowUserToResizeRows = false;
+            tab.ReadOnly = true;
             this.DoubleBuffered = true;
         }
         public int aggiornamento(int n1, int n2, int tot, bool scelta)
